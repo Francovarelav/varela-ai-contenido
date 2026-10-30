@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+/* Carrusel @varela.ai — foto natural a sangre + tipografía grande. 1080×1350 por lámina. */
+:root{--azul:#2B4FE8;--navy:#091C52;--electrico:#3FC1FF;--papel:#F5F4F0;--tinta:#0E1116;--lienzo:#14161A;--gris:#4E5665;
+  --display:"Helvetica Neue","Inter","Inter Display",Arial,sans-serif;--mono:"JetBrains Mono","SF Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0}
+body{background:#000;font-family:var(--display)}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff}
+.s .foto{position:absolute;inset:0;background-size:cover;background-position:center}
+/* velo para legibilidad: sombra lisa arriba (texto) y abajo (marca), sin brillo */
+.s .velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,14,.78) 0%,rgba(8,10,14,.45) 34%,rgba(8,10,14,0) 58%,rgba(8,10,14,0) 78%,rgba(8,10,14,.55) 100%)}
+.s.abajo .velo{background:linear-gradient(0deg,rgba(8,10,14,.9) 0%,rgba(8,10,14,.62) 42%,rgba(8,10,14,0) 64%,rgba(8,10,14,0) 85%,rgba(8,10,14,.45) 100%)}
+.top{position:absolute;left:72px;right:72px;top:64px;display:flex;justify-content:space-between;align-items:center}
+.num{font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:.06em;padding:10px 18px;border-radius:99px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.35)}
+.eye{font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:99px;background:var(--electrico);color:var(--tinta);transform:rotate(-3deg)}
+.txt{position:absolute;left:72px;right:72px;top:170px}
+.s.abajo .txt{top:auto;bottom:190px}
+h1{font-weight:800;font-size:112px;line-height:1.06;letter-spacing:-.045em;text-wrap:balance}
+h1.m{font-size:96px}
+h1{isolation:isolate}
+h1 mark{position:relative;z-index:-1;background:var(--azul);color:#fff;padding:0 .1em .02em;border-radius:14px;line-height:1;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+h1 em{font-style:normal;color:var(--electrico)}
+p{text-wrap:pretty;margin-top:34px;font-size:40px;line-height:1.28;font-weight:500;letter-spacing:-.01em;max-width:900px;color:#F1F3F7}
+p b{font-weight:800;color:#fff}
+.nota{font-family:var(--mono);font-size:24px;opacity:.8;margin-top:20px;letter-spacing:.02em}
+.pie{position:absolute;left:72px;right:72px;bottom:60px;display:flex;justify-content:space-between;align-items:center}
+.marca{display:flex;align-items:center;gap:14px;font-weight:800;font-size:34px;letter-spacing:-.03em}
+.marca img{height:40px}
+.desliza{font-family:var(--mono);font-size:26px;font-weight:700;padding:12px 22px;border-radius:99px;background:#fff;color:var(--tinta)}
+/* lámina de papel (rompe el ritmo de fotos) */
+.s.papel{background:var(--papel);color:var(--tinta)}
+.s.papel .num{background:transparent;border-color:rgba(14,17,22,.25);color:var(--tinta)}
+.s.papel h1{font-size:128px}
+.s.papel h1{isolation:isolate}
+h1 mark{position:relative;z-index:-1;color:#fff}
+.tip{position:absolute;left:72px;right:72px;bottom:150px;background:var(--azul);color:#fff;border-radius:18px;padding:34px 38px;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.2;display:flex;justify-content:space-between;gap:24px}
+.tip i{font-style:normal}
+.s.papel p{color:var(--gris)}
+.lista{margin-top:46px;display:flex;flex-direction:column}
+.lista div{display:flex;gap:26px;align-items:baseline;padding:34px 0;border-bottom:3px dotted rgba(14,17,22,.25);font-size:50px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.lista span{font-family:var(--mono);font-size:28px;color:var(--azul);min-width:58px}
+/* CTA */
+.bloque{display:inline-flex;align-items:center;gap:22px;margin-top:40px;background:var(--azul);color:#fff;border-radius:18px;padding:26px 34px;font-size:54px;font-weight:800;letter-spacing:-.03em}
+.bloque i{font-style:normal;font-size:52px}
+.guarda{font-family:var(--mono);font-size:26px;font-weight:700;margin-top:26px;display:inline-block;padding:10px 18px;border-radius:99px;background:#fff;color:var(--tinta);transform:rotate(-2deg)}
+</style></head><body id="raiz"></body>
+<script>
+// Las láminas vienen de slides.json (misma carpeta del carrusel); ver CARRUSEL.md
+const D = window.SLIDES;
+const n = D.slides.length;
+const pad = i => String(i).padStart(2,'0');
+document.getElementById('raiz').innerHTML = D.slides.map((s,i) => {
+  const clase = ['s', s.tipo==='papel'?'papel':'', s.abajo?'abajo':''].join(' ');
+  const fondo = s.tipo==='papel' ? '' : `<div class="foto" style="background-image:url('${s.foto}');${s.pos?`background-position:${s.pos}`:''}"></div><div class="velo"></div>`;
+  const lista = s.lista ? `<div class="lista">${s.lista.map((t,k)=>`<div><span>${pad(k+1)}</span>${t}</div>`).join('')}</div>` : '';
+  const tip = s.tip ? `<div class="tip">${s.tip}<i>↗</i></div>` : '';
+  const cta = s.cta ? `<div class="bloque">Escríbenos «${s.cta}» <i>↗</i></div><br><span class="guarda">Guárdalo para cuando lo necesites</span>` : '';
+  const logo = s.tipo==='papel' ? D.logo : D.logo;
+  return `<section class="${clase}">${fondo}
+    <div class="top"><span class="num">${pad(i+1)}/${pad(n)}</span>${s.eye?`<span class="eye">${s.eye}</span>`:''}</div>
+    <div class="txt"><h1 class="${s.m?'m':''}">${s.titulo}</h1>${s.texto?`<p>${s.texto}</p>`:''}${s.nota?`<div class="nota">${s.nota}</div>`:''}${lista}${cta}</div>${tip}
+    <div class="pie"><span class="marca"><img src="${logo}">varelta</span>${i===0?'<span class="desliza">Desliza →</span>':(i===n-1?'<span class="desliza">varelta.com</span>':'')}</div>
+  </section>`;
+}).join('');
+</script></html>

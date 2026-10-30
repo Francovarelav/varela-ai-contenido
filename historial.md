@@ -20,3 +20,5 @@ Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
 - 2026-11-13 · reel LEGO v15 · Ventas con IA (IA)
 
 ## Carruseles (10:00) y videos nuevos (15:00)
+- 2026-10-30 · video · cobranza y clientes morosos · distribuidora · COBRA · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=2932025967383496175 · 8 créditos (wan3_0)
+- 2026-10-30 · carrusel · depender del dueño para todo · ferretería/panadería/refaccionaria · DUEÑO · (16:30) · 6 fotos gpt_image_2_5

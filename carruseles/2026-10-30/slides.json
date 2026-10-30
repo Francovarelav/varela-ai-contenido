@@ -1,0 +1,61 @@
+{
+ "slides": [
+  {
+   "foto": "fotos/1.png",
+   "eye": "Dueños de negocio",
+   "titulo": "Si mañana faltas, ¿tu negocio <mark>sigue funcionando?</mark>",
+   "texto": "Sé honesto. Si la respuesta es «no», esto es para ti.",
+   "pos": "center 60%"
+  },
+  {
+   "foto": "fotos/3.png",
+   "eye": "Te suena",
+   "titulo": "Todos te preguntan <em>a ti.</em>",
+   "texto": "Precios, pedidos, pendientes, quién debe qué. Todo vive en tu cabeza… y en tu WhatsApp.",
+   "pos": "center 70%"
+  },
+  {
+   "foto": "fotos/2.png",
+   "eye": "Lo que cuesta",
+   "titulo": "Eres el cuello de botella de <mark>tu propio negocio.</mark>",
+   "m": true,
+   "texto": "Si contestas <b>40 dudas al día</b> de 2 minutos, son <b>más de 6 horas a la semana</b> apagando fuegos.",
+   "nota": "* Ejemplo ilustrativo",
+   "abajo": true
+  },
+  {
+   "foto": "fotos/4.png",
+   "eye": "Paso 1 · hoy",
+   "titulo": "Escribe lo que <em>solo tú</em> sabes hacer.",
+   "texto": "Cómo cotizas, cómo cobras, qué hacer si falta material. Paso a paso, en una hoja.",
+   "abajo": true
+  },
+  {
+   "tipo": "papel",
+   "eye": "Paso 2 · esta semana",
+   "titulo": "Saca todo de <mark>los chats.</mark>",
+   "lista": [
+    "Pedidos y pendientes en un solo lugar",
+    "Cada tarea con su responsable",
+    "Precios y respuestas que el equipo consulte sin preguntarte"
+   ],
+   "tip": "Empieza por lo que más te preguntan."
+  },
+  {
+   "foto": "fotos/5.png",
+   "eye": "Cómo lo resolvemos",
+   "titulo": "Un sistema que tu equipo <mark>usa sin ti.</mark>",
+   "m": true,
+   "texto": "En <b>Varelta</b> lo construimos a la medida de tu negocio: tu gente ve qué hacer, tú ves todo desde el celular.",
+   "abajo": true
+  },
+  {
+   "foto": "fotos/6.png",
+   "eye": "Tu turno",
+   "titulo": "Tu negocio funcionando, <em>aunque no estés.</em>",
+   "cta": "DUEÑO",
+   "pos": "center 40%",
+   "abajo": true
+  }
+ ]
+}

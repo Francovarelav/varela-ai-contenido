@@ -8,8 +8,11 @@ const raiz = __dirname;
 const data = JSON.parse(fs.readFileSync(path.join(dir, 'slides.json'), 'utf8'));
 const abs = p => url.pathToFileURL(path.resolve(dir, p)).href;
 data.logo = url.pathToFileURL(path.join(raiz, 'varelta-logo-recorte.png')).href;
-data.slides.forEach(s => { if (s.foto) s.foto = abs(s.foto); });
-const html = fs.readFileSync(path.join(raiz, 'plantilla-carrusel.html'), 'utf8')
+data.slides.forEach(s => {
+  if (s.foto) s.foto = abs(s.foto);
+  if (s.personaje) s.personaje = url.pathToFileURL(path.join(raiz, 'personajes', s.personaje + '.png')).href;
+});
+const html = fs.readFileSync(path.join(raiz, data.plantilla || 'plantilla-carrusel.html'), 'utf8')
   .replace('<script>', `<script>window.SLIDES=${JSON.stringify(data)};</script><script>`);
 const tmp = path.join(dir, '_render.html'); fs.writeFileSync(tmp, html);
 const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });

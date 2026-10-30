@@ -1,0 +1,125 @@
+{
+ "plantilla": "plantilla-sistema.html",
+ "slides": [
+  {
+   "tipo": "gancho",
+   "eye": "Alerta",
+   "titulo": "Tu Excel dice 40. <mark>En la bodega hay 12.</mark>",
+   "burbujas": [
+    {
+     "de": "Cliente · mayoreo",
+     "m": "¿Me surtes 30 piezas hoy?",
+     "i": "WA"
+    }
+   ],
+   "personaje": "karla/sorprendida"
+  },
+  {
+   "tipo": "caos",
+   "eye": "Te suena",
+   "titulo": "Y te enteras <em>cuando ya vendiste.</em>",
+   "burbujas": [
+    {
+     "de": "Almacén",
+     "m": "Ya no hay, se acabó ayer",
+     "c": "r",
+     "i": "!!"
+    },
+    {
+     "de": "Cliente",
+     "m": "¿Entonces cuándo llega mi pedido?",
+     "i": "WA"
+    },
+    {
+     "de": "Proveedor",
+     "m": "Mínimo 10 días hábiles",
+     "c": "a",
+     "i": "PR"
+    }
+   ],
+   "personaje": "karla/preocupada"
+  },
+  {
+   "tipo": "numero",
+   "eye": "Lo que cuesta",
+   "numero": "28 <small>piezas</small>",
+   "vs": [
+    "EXCEL: 40",
+    "REAL: 12"
+   ],
+   "etiqueta": "de diferencia que nadie vio. Cada una es una venta que prometiste y no puedes cumplir.",
+   "nota": "* Ejemplo ilustrativo",
+   "personaje": "karla/triste"
+  },
+  {
+   "tipo": "pasos",
+   "eye": "Haz esto hoy",
+   "titulo": "3 pasos para que <mark>tu stock no mienta.</mark>",
+   "lista": [
+    "Cuenta físico tus 20 productos más vendidos",
+    "Una sola persona registra entradas y salidas",
+    "Corte semanal: sistema contra lo que hay"
+   ],
+   "tip": "Empieza por lo que más vendes."
+  },
+  {
+   "tipo": "sistema",
+   "eye": "Cómo lo resolvemos",
+   "titulo": "Inventario <em>en vivo</em> en tu celular.",
+   "m": true,
+   "texto": "Cada venta descuenta sola y te avisa antes de que se acabe.",
+   "app": {
+    "titulo": "Inventario",
+    "kpi": {
+     "l": "STOCK REAL · HOY",
+     "v": "1,284 pzs"
+    },
+    "filas": [
+     {
+      "t": "Tornillo 1/4\"",
+      "s": "Quedan 12 · mín. 30",
+      "e": "REORDENAR",
+      "c": "r"
+     },
+     {
+      "t": "Bisagra 3\"",
+      "s": "Quedan 86",
+      "e": "OK",
+      "c": "v"
+     },
+     {
+      "t": "Taquete 8 mm",
+      "s": "Llega mañana",
+      "e": "EN CAMINO",
+      "c": "b"
+     },
+     {
+      "t": "Chapa de seguridad",
+      "s": "Quedan 41",
+      "e": "OK",
+      "c": "v"
+     }
+    ],
+    "boton": "Pedir al proveedor"
+   },
+   "personaje": "karla/tablet"
+  },
+  {
+   "tipo": "numero",
+   "fondo": "azul",
+   "eye": "El resultado",
+   "numero": "0 <small>sorpresas</small>",
+   "etiqueta": "Sabes lo que tienes, lo que falta y lo que viene en camino. Siempre.",
+   "personaje": "karla/celebra"
+  },
+  {
+   "tipo": "cta",
+   "eye": "Tu turno",
+   "titulo": "¿Quieres tu inventario <em>en vivo?</em>",
+   "m": true,
+   "pregunta": "Escríbenos la palabra y te mostramos cómo se vería en tu negocio.",
+   "cta": "STOCK",
+   "personaje": "karla/pulgar"
+  }
+ ]
+}

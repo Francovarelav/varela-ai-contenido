@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+/* Carrusel @varela.ai «sistema»: futurista, minifiguras LEGO + interfaces hechas en código. 1080×1350 por lámina. 0 créditos. */
+:root{--azul:#2B4FE8;--azul2:#1A37B8;--navy:#091C52;--el:#3FC1FF;--papel:#F5F4F0;--tinta:#0E1116;--noche:#070B18;--gris:#8B93A7;
+  --rojo:#FF5A4E;--verde:#2EE59D;--ambar:#FFB547;
+  --display:"Helvetica Neue","Inter","Inter Display",Arial,sans-serif;--mono:"JetBrains Mono","SF Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0}
+body{background:#000;font-family:var(--display)}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff;background:var(--noche)}
+/* retícula técnica */
+.s::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(91,135,245,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(91,135,245,.10) 1px,transparent 1px);background-size:54px 54px}
+.s.claro{background:var(--papel);color:var(--tinta)}
+.s.claro::before{background-image:linear-gradient(rgba(14,17,22,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,17,22,.06) 1px,transparent 1px)}
+.s.azul{background:var(--azul)}
+.s.azul::before{background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px)}
+.capa{position:absolute;inset:0}
+.top{position:absolute;left:64px;right:64px;top:58px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.num{font-family:var(--mono);font-size:26px;font-weight:700;letter-spacing:.06em;padding:10px 18px;border-radius:99px;border:1.5px solid rgba(255,255,255,.35)}
+.claro .num{border-color:rgba(14,17,22,.25)}
+.eye{font-family:var(--mono);font-size:25px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:99px;background:var(--el);color:var(--tinta);transform:rotate(-3deg)}
+.azul .eye{background:#fff}
+.txt{position:absolute;left:64px;right:64px;top:160px;z-index:4}
+h1{font-weight:800;font-size:108px;line-height:1.04;letter-spacing:-.045em;text-wrap:balance;isolation:isolate}
+h1.m{font-size:92px}
+h1 mark{position:relative;z-index:-1;background:var(--azul);color:#fff;padding:0 .1em .02em;border-radius:14px;line-height:1;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.azul h1 mark{background:var(--tinta)}
+h1 em{font-style:normal;color:var(--el)}
+.claro h1 em{color:var(--azul)}
+p{text-wrap:pretty;margin-top:30px;font-size:38px;line-height:1.28;font-weight:500;letter-spacing:-.01em;max-width:860px;color:#DDE3F0}
+.claro p{color:#4E5665}
+p b{font-weight:800;color:#fff}.claro p b{color:var(--tinta)}
+.nota{font-family:var(--mono);font-size:23px;opacity:.75;margin-top:18px}
+.pie{position:absolute;left:64px;right:64px;bottom:54px;display:flex;justify-content:space-between;align-items:center;z-index:6}
+.marca{display:flex;align-items:center;gap:14px;font-weight:800;font-size:34px;letter-spacing:-.03em}
+.marca img{height:40px}
+.azul .marca img{filter:brightness(0) invert(1)}
+.desliza{font-family:var(--mono);font-size:26px;font-weight:700;padding:12px 22px;border-radius:99px;background:#fff;color:var(--tinta)}
+.claro .desliza{background:var(--tinta);color:#fff}
+/* minifigura */
+.pj{position:absolute;z-index:3;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.pj.der{right:-30px;bottom:-40px;height:780px}
+.pj.izq{left:-20px;bottom:-40px;height:720px}
+.pj.chico{height:600px}
+.pj.mini{height:430px;right:-10px;bottom:-30px}
+.s.pasos .txt{bottom:300px}
+.sombra{position:absolute;z-index:2;width:520px;height:60px;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(18px)}
+/* notificaciones / burbujas */
+.pila{position:absolute;left:64px;top:600px;width:680px;display:flex;flex-direction:column;gap:22px;z-index:4}
+.noti{background:rgba(255,255,255,.96);color:var(--tinta);border-radius:30px;padding:28px 32px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:flex;gap:18px;align-items:flex-start}
+.noti .ic{flex:none;width:72px;height:72px;border-radius:20px;background:var(--verde);display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:24px;color:#063}
+.noti .ic.r{background:var(--rojo);color:#fff}.noti .ic.a{background:var(--ambar);color:#5a3b00}.noti .ic.b{background:var(--azul);color:#fff}
+.noti .q{font-size:26px;font-family:var(--mono);color:#6B7385;display:flex;justify-content:space-between;gap:16px}
+.noti .m{font-size:42px;font-weight:700;letter-spacing:-.015em;line-height:1.2;margin-top:4px}
+.pila .noti:nth-child(2){transform:translateX(40px) rotate(1.5deg)}
+.pila .noti:nth-child(3){transform:translateX(10px) rotate(-1.5deg)}
+.pila .noti:nth-child(4){transform:translateX(60px) rotate(1deg)}
+/* número gigante */
+.gigante{position:absolute;left:56px;right:56px;top:300px;z-index:4}
+.gigante .n{font-weight:800;font-size:330px;line-height:.86;letter-spacing:-.06em}
+.gigante .n small{font-size:120px;letter-spacing:-.04em}
+.gigante .vs{display:flex;align-items:center;gap:28px;margin-top:28px}
+.gigante .vs .b{font-family:var(--mono);font-size:30px;font-weight:700;padding:14px 22px;border-radius:14px}
+.gigante .l{font-size:46px;font-weight:700;letter-spacing:-.02em;margin-top:34px;max-width:900px;line-height:1.15}
+/* teléfono con la app */
+.tel{position:absolute;right:70px;top:420px;width:470px;height:900px;border-radius:64px;background:#0B0F1C;border:10px solid #1C2335;box-shadow:0 40px 80px rgba(0,0,0,.5);z-index:4;overflow:hidden;transform:rotate(4deg)}
+.tel .pant{position:absolute;inset:0;background:#F7F8FC;color:var(--tinta);padding:56px 28px 28px}
+.tel .isla{position:absolute;top:18px;left:50%;width:130px;height:34px;margin-left:-65px;border-radius:20px;background:#0B0F1C;z-index:2}
+.tel .h{display:flex;justify-content:space-between;align-items:center}
+.tel .h b{font-size:34px;letter-spacing:-.03em}
+.tel .h span{font-family:var(--mono);font-size:18px;color:#fff;background:var(--azul);padding:6px 12px;border-radius:99px}
+.tel .kpi{margin-top:22px;background:var(--azul);color:#fff;border-radius:22px;padding:22px}
+.tel .kpi i{font-style:normal;font-family:var(--mono);font-size:19px;opacity:.85}
+.tel .kpi div{font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:4px}
+.tel .fila{margin-top:16px;background:#fff;border:1.5px solid #E3E7F0;border-radius:18px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tel .fila b{font-size:24px;letter-spacing:-.01em;display:block}
+.tel .fila small{font-family:var(--mono);font-size:17px;color:#6B7385}
+.tel .est{font-family:var(--mono);font-size:16px;font-weight:700;padding:7px 11px;border-radius:99px;white-space:nowrap}
+.est.v{background:#D7F9EA;color:#0A7A4E}.est.a{background:#FFF0D6;color:#8A5A00}.est.r{background:#FFE1DE;color:#B3261E}.est.b{background:#E4EDFD;color:#1A37B8}
+.tel .btn{position:absolute;left:28px;right:28px;bottom:28px;background:var(--tinta);color:#fff;border-radius:20px;padding:22px;text-align:center;font-size:28px;font-weight:800}
+.s.sistema .txt{right:560px}
+.s.sistema p{font-size:34px}
+.s.sistema .pj{left:10px;right:auto;bottom:120px;height:500px}
+/* lista (lámina clara) */
+.lista{margin-top:44px;display:flex;flex-direction:column}
+.lista div{display:flex;gap:26px;align-items:baseline;padding:38px 0;border-bottom:3px dotted rgba(14,17,22,.25);font-size:54px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.lista span{font-family:var(--mono);font-size:28px;color:var(--azul);min-width:58px}
+.tip{margin-top:46px;background:var(--azul);color:#fff;border-radius:18px;padding:32px 36px;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.2;display:flex;justify-content:space-between;gap:24px}
+.tip i{font-style:normal}
+/* CTA: chat escribiendo la palabra */
+.chat{position:absolute;left:64px;top:540px;width:680px;z-index:4;display:flex;flex-direction:column;gap:18px}
+.chat .yo{align-self:flex-end;background:#fff;color:var(--tinta);border-radius:34px 34px 8px 34px;padding:30px 44px;font-size:104px;font-weight:800;letter-spacing:-.03em}
+.chat .el{align-self:flex-start;background:#1C2335;border-radius:30px 30px 30px 8px;padding:28px 34px;font-size:38px;font-weight:600;line-height:1.25;max-width:520px}
+.chat .t{font-family:var(--mono);font-size:24px;opacity:.8;align-self:flex-end}
+.guarda{font-family:var(--mono);font-size:25px;font-weight:700;margin-top:30px;display:inline-block;padding:10px 18px;border-radius:99px;background:#fff;color:var(--tinta);transform:rotate(-2deg)}
+</style></head><body id="raiz"></body>
+<script>
+// Láminas desde slides.json (plantilla "sistema"); ver CARRUSEL.md
+const D = window.SLIDES, n = D.slides.length, pad = i => String(i).padStart(2,'0');
+const pj = (s, cls) => s.personaje ? `<div class="sombra" style="${cls.includes('izq')?'left:40px':'right:60px'};bottom:20px"></div><img class="pj ${cls}" src="${s.personaje}">` : '';
+const notis = b => `<div class="pila">${b.map(x=>`<div class="noti"><div class="ic ${x.c||''}">${x.i||'WA'}</div><div style="flex:1"><div class="q"><span>${x.de}</span><span>${x.h||'ahora'}</span></div><div class="m">${x.m}</div></div></div>`).join('')}</div>`;
+const tel = a => `<div class="tel"><div class="isla"></div><div class="pant"><div class="h"><b>${a.titulo}</b><span>${a.tag||'EN VIVO'}</span></div>
+  ${a.kpi?`<div class="kpi"><i>${a.kpi.l}</i><div>${a.kpi.v}</div></div>`:''}
+  ${(a.filas||[]).map(f=>`<div class="fila"><div><b>${f.t}</b><small>${f.s||''}</small></div><span class="est ${f.c||'v'}">${f.e}</span></div>`).join('')}
+  ${a.boton?`<div class="btn">${a.boton}</div>`:''}</div></div>`;
+document.getElementById('raiz').innerHTML = D.slides.map((s,i) => {
+  const fondo = s.fondo || (s.tipo==='pasos'?'claro':'');
+  let cuerpo = '';
+  if (s.tipo==='gancho') cuerpo = (s.burbujas?notis(s.burbujas):'') + pj(s,'der');
+  if (s.tipo==='caos') cuerpo = notis(s.burbujas||[]) + pj(s,'der chico');
+  if (s.tipo==='numero') cuerpo = `<div class="gigante"><div class="n">${s.numero}</div>${s.vs?`<div class="vs">${s.vs.map((v,k)=>`<span class="b" style="background:${k?'var(--el)':'var(--rojo)'};color:var(--tinta)">${v}</span>`).join('<span style="font-family:var(--mono);font-size:30px">vs</span>')}</div>`:''}<div class="l">${s.etiqueta||''}</div>${s.nota?`<div class="nota">${s.nota}</div>`:''}</div>` + pj(s,'der chico');
+  if (s.tipo==='sistema') cuerpo = tel(s.app) + pj(s,'izq');
+  if (s.tipo==='cta') cuerpo = `<div class="chat"><div class="el">${s.pregunta||'¿Quieres algo así para tu negocio?'}</div><div class="yo">${s.cta}</div><div class="t">Enviado · ahora</div></div>` + pj(s,'der chico');
+  const lista = s.lista ? `<div class="lista">${s.lista.map((t,k)=>`<div><span>${pad(k+1)}</span>${t}</div>`).join('')}</div>` : '';
+  const tip = s.tip ? `<div class="tip">${s.tip}<i>↗</i></div>` : '';
+  const guarda = s.tipo==='cta' ? `<br><span class="guarda">Escríbenos «${s.cta}» por DM · guárdalo</span>` : '';
+  const pie = i===0 ? '<span class="desliza">Desliza →</span>' : (i===n-1 ? '<span class="desliza">varelta.com</span>' : '');
+  return `<section class="s ${s.tipo} ${fondo}">
+    <div class="top"><span class="num">${pad(i+1)}/${pad(n)}</span>${s.eye?`<span class="eye">${s.eye}</span>`:''}</div>
+    <div class="txt"><h1 class="${s.m?'m':''}">${s.titulo||''}</h1>${s.texto?`<p>${s.texto}</p>`:''}${lista}${tip}${guarda}</div>
+    ${cuerpo}
+    <div class="pie"><span class="marca"><img src="${D.logo}">varelta</span>${pie}</div></section>`;
+}).join('');
+</script></html>

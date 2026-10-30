@@ -4,7 +4,7 @@
   {
    "tipo": "gancho",
    "eye": "Alerta",
-   "titulo": "Tu Excel dice 40. <mark>En la bodega hay 12.</mark>",
+   "titulo": "Tu Excel te está <mark>mintiendo.</mark>",
    "burbujas": [
     {
      "de": "Cliente · mayoreo",
@@ -12,7 +12,8 @@
      "i": "WA"
     }
    ],
-   "personaje": "karla/sorprendida"
+   "personaje": "karla/sorprendida",
+   "texto": "Dice que tienes 40. En la bodega hay 12."
   },
   {
    "tipo": "caos",

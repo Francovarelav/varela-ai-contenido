@@ -10,7 +10,8 @@ beto, elena, andres, sofi, memo, tere, paty, rafa, karla, ana, lalo, tono, lupit
 Usa UN personaje por carrusel, el que mejor encaje con el giro, y no repitas el del día anterior.
 
 Tipos de lámina (`tipo`):
-- `gancho`: `titulo` (máx. 9 palabras, `<mark>` bloque azul, `<em>` azul eléctrico), `burbujas` opcional (1 notificación), `personaje` sorprendida/preocupada.
+- `gancho` (lámina 1, CENTRADA y gigante): `titulo` de 3–6 palabras tipo clickbait honesto, con la palabra que más duele en `<mark>`; `texto` = 1 frase que aterriza el gancho con un dato concreto; `burbujas` = 1 notificación que lo hace real; `personaje` sorprendida/preocupada.
+  Fórmulas que funcionan: «Tu Excel te está <mark>mintiendo.</mark>» · «Estás perdiendo ventas <mark>mientras duermes.</mark>» · «Tu WhatsApp <mark>no es un sistema.</mark>» · «Ese cliente <mark>no va a regresar.</mark>» · «Le estás pagando a alguien <mark>por copiar y pegar.</mark>» · «Nadie te dijo esto <mark>de tu inventario.</mark>». Acusa al enemigo (el Excel, el WhatsApp, el papel), nunca al dueño.
 - `caos`: `titulo` + `burbujas` (3 notificaciones: `de`, `m`, `i` = 2 letras del ícono, `c` = r|a|b color, `h` hora) + `personaje`.
 - `numero`: `numero` (ej. `"28 <small>piezas</small>"`), `vs` opcional (2 etiquetas), `etiqueta`, `nota` («* Ejemplo ilustrativo» si es ejemplo), `personaje`. Con `"fondo":"azul"` sirve para el resultado.
 - `pasos`: lámina clara con `titulo`, `lista` (3 puntos, cortos) y `tip`. Sin personaje.

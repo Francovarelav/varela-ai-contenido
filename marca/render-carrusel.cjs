@@ -1,9 +1,10 @@
-// Uso: node marca/render-carrusel.mjs carruseles/<fecha>
+// Uso: node marca/render-carrusel.cjs carruseles/<fecha>
 // Lee <carpeta>/slides.json y escribe <carpeta>/01.png … NN.png (1080×1350).
-import { chromium } from 'playwright';
-import fs from 'node:fs'; import path from 'node:path'; import url from 'node:url';
+const { chromium } = require('playwright');
+const fs = require('node:fs'), path = require('node:path'), url = require('node:url');
+(async () => {
 const dir = path.resolve(process.argv[2]);
-const raiz = path.dirname(url.fileURLToPath(import.meta.url));
+const raiz = __dirname;
 const data = JSON.parse(fs.readFileSync(path.join(dir, 'slides.json'), 'utf8'));
 const abs = p => url.pathToFileURL(path.resolve(dir, p)).href;
 data.logo = url.pathToFileURL(path.join(raiz, 'varelta-logo-recorte.png')).href;
@@ -16,3 +17,4 @@ await p.goto(url.pathToFileURL(tmp).href); await p.waitForLoadState('networkidle
 const secs = await p.$$('section');
 for (let i = 0; i < secs.length; i++) await secs[i].screenshot({ path: path.join(dir, String(i + 1).padStart(2, '0') + '.png') });
 await b.close(); fs.unlinkSync(tmp); console.log('ok', secs.length, 'láminas');
+})();

@@ -12,7 +12,7 @@ Mira `carruseles/2026-10-30/slides.json`: es el formato exacto a seguir.
    Varía las escenas: dueño cansado/estresado (gancho), equipo o clientes (problema), objeto/detalle
    (costo o paso), empleado resolviendo con tablet/celular (solución), dueño tranquilo (CTA).
 2. Descarga a `carruseles/<fecha>/fotos/1.png …` y revísalas (Read). Regenera las raras una vez.
-3. Escribe `carruseles/<fecha>/slides.json` y renderiza: `node marca/render-carrusel.mjs carruseles/<fecha>`
+3. Escribe `carruseles/<fecha>/slides.json` y renderiza: `node marca/render-carrusel.cjs carruseles/<fecha>`
    (usa `marca/plantilla-carrusel.html`; en la nube, si falta `node_modules/playwright`, `npm i playwright`
    o usa el Playwright global de /opt/pw-browsers con `NODE_PATH`).
 

@@ -22,3 +22,5 @@ Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
 ## Carruseles (10:00) y videos nuevos (15:00)
 - 2026-10-30 · video · cobranza y clientes morosos · distribuidora · COBRA · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=2932025967383496175 · 8 créditos (wan3_0)
 - 2026-10-30 · carrusel · depender del dueño para todo · ferretería/panadería/refaccionaria · DUEÑO · (16:30) · 6 fotos gpt_image_2_5
+- 2026-10-31 · carrusel extra 12:00 (estilo sistema) · inventario descuadrado · bodega/ferretería · STOCK · personaje karla
+- 2026-11-01 · carrusel extra 12:00 (foto natural) · cotizaciones lentas · taller de muebles · COTIZA

@@ -1,0 +1,9 @@
+{"slides":[
+ {"foto":"fotos/1.png","eye":"Te pasó","titulo":"Cotizaste en 2 días. <mark>Él compró en 2 horas.</mark>","texto":"Y no fue por precio. Fue por lento."},
+ {"foto":"fotos/2.png","eye":"Te suena","titulo":"Cada cotización es <em>empezar de cero.</em>","texto":"Buscar precios en el Excel, calcular a mano, armar el PDF, mandarlo por WhatsApp… y esperar."},
+ {"foto":"fotos/3.png","eye":"Lo que cuesta","titulo":"El que contesta primero <mark>se queda la venta.</mark>","m":true,"texto":"Si cotizas <b>20 al mes</b> y pierdes <b>1 de cada 4</b> por tardar, son <b>5 ventas</b> que se fueron con otro.","nota":"* Ejemplo ilustrativo","abajo":true},
+ {"foto":"fotos/4.png","eye":"Paso 1 · hoy","titulo":"Arma la lista de tus <em>10 más pedidos.</em>","texto":"Medidas, materiales y precio fijo. Con eso contestas la mayoría de las cotizaciones en minutos."},
+ {"tipo":"papel","eye":"Paso 2 · esta semana","titulo":"Responde en <mark>menos de 1 hora.</mark>","lista":["Una plantilla de cotización lista para llenar","Un mensaje de seguimiento a las 48 horas","Una persona responsable de cotizar"],"tip":"La rapidez vende más que el descuento."},
+ {"foto":"fotos/5.png","eye":"Cómo lo resolvemos","titulo":"Cotizaciones en <mark>3 minutos,</mark> desde el celular.","m":true,"texto":"En <b>Varelta</b> te hacemos un sistema que arma la cotización con tus precios, la manda por WhatsApp y te avisa cuándo dar seguimiento.","abajo":true},
+ {"foto":"fotos/6.png","eye":"Tu turno","titulo":"Cotiza primero. <em>Vende primero.</em>","cta":"COTIZA","abajo":true}
+]}

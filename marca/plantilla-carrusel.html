@@ -31,10 +31,10 @@ p b{font-weight:800;color:#fff}
 /* lámina de papel (rompe el ritmo de fotos) */
 .s.papel{background:var(--papel);color:var(--tinta)}
 .s.papel .num{background:transparent;border-color:rgba(14,17,22,.25);color:var(--tinta)}
-.s.papel h1{font-size:128px}
+.s.papel h1{font-size:118px}
 .s.papel h1{isolation:isolate}
 h1 mark{position:relative;z-index:-1;color:#fff}
-.tip{position:absolute;left:72px;right:72px;bottom:150px;background:var(--azul);color:#fff;border-radius:18px;padding:34px 38px;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.2;display:flex;justify-content:space-between;gap:24px}
+.tip{margin-top:48px;background:var(--azul);color:#fff;border-radius:18px;padding:34px 38px;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.2;display:flex;justify-content:space-between;gap:24px}
 .tip i{font-style:normal}
 .s.papel p{color:var(--gris)}
 .lista{margin-top:46px;display:flex;flex-direction:column}
@@ -59,7 +59,7 @@ document.getElementById('raiz').innerHTML = D.slides.map((s,i) => {
   const logo = s.tipo==='papel' ? D.logo : D.logo;
   return `<section class="${clase}">${fondo}
     <div class="top"><span class="num">${pad(i+1)}/${pad(n)}</span>${s.eye?`<span class="eye">${s.eye}</span>`:''}</div>
-    <div class="txt"><h1 class="${s.m?'m':''}">${s.titulo}</h1>${s.texto?`<p>${s.texto}</p>`:''}${s.nota?`<div class="nota">${s.nota}</div>`:''}${lista}${cta}</div>${tip}
+    <div class="txt"><h1 class="${s.m?'m':''}">${s.titulo}</h1>${s.texto?`<p>${s.texto}</p>`:''}${s.nota?`<div class="nota">${s.nota}</div>`:''}${lista}${tip}${cta}</div>
     <div class="pie"><span class="marca"><img src="${logo}">varelta</span>${i===0?'<span class="desliza">Desliza →</span>':(i===n-1?'<span class="desliza">varelta.com</span>':'')}</div>
   </section>`;
 }).join('');

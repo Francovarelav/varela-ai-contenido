@@ -1,0 +1,22 @@
+# Historial de publicaciones @varela.ai
+
+Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
+
+## Reels LEGO (programados a las 18:00)
+- 2026-10-30 · reel LEGO v01 · Transportistas (RUTA)
+- 2026-10-31 · reel LEGO v02 · Contadores (CONTA)
+- 2026-11-01 · reel LEGO v03 · Agencias (AGENCIA)
+- 2026-11-02 · reel LEGO v04 · Inmobiliarias (CASA)
+- 2026-11-03 · reel LEGO v05 · Comunicación de equipos (EQUIPO)
+- 2026-11-04 · reel LEGO v06 · Laboratorios (LAB)
+- 2026-11-05 · reel LEGO v07 · Consultorios (CITA)
+- 2026-11-06 · reel LEGO v08 · Rentas vacacionales (RENTA)
+- 2026-11-07 · reel LEGO v09 · Talleres (TALLER)
+- 2026-11-08 · reel LEGO v10 · Restaurantes (COCINA)
+- 2026-11-09 · reel LEGO v11 · Escuelas (ESCUELA)
+- 2026-11-10 · reel LEGO v12 · Constructoras (OBRA)
+- 2026-11-11 · reel LEGO v13 · Manufactura (PLANTA)
+- 2026-11-12 · reel LEGO v14 · Coaches y gimnasios (COACH)
+- 2026-11-13 · reel LEGO v15 · Ventas con IA (IA)
+
+## Carruseles (10:00) y videos nuevos (15:00)

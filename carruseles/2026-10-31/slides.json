@@ -1,0 +1,12 @@
+{
+ "plantilla": "plantilla-sistema.html",
+ "slides": [
+  {"tipo":"gancho","eye":"Alerta","titulo":"Ya agendó <mark>con otra.</mark>","texto":"Preguntó precio el martes. Nadie le contestó.","burbujas":[{"de":"Nueva paciente · Instagram","m":"¿Cuánto cuesta la limpieza facial?","i":"IG"}],"personaje":"daniela/sorprendida"},
+  {"tipo":"caos","eye":"Te suena","titulo":"Mensajes que <em>se quedan en visto.</em>","burbujas":[{"de":"Facebook","m":"¿Tienen promoción de depilación?","c":"b","i":"FB"},{"de":"WhatsApp","m":"Hola, ¿siguen con el paquete de 3?","i":"WA"},{"de":"Recepción","m":"Se me pasó contestarles, ¿quién era?","c":"r","i":"!!"}],"personaje":"daniela/preocupada"},
+  {"tipo":"numero","eye":"Lo que cuesta","numero":"6 <small>de 10</small>","vs":["PREGUNTARON: 10","AGENDARON: 4"],"etiqueta":"prospectos se enfrían si nadie les da seguimiento en las primeras 24 horas.","nota":"* Ejemplo ilustrativo","personaje":"daniela/triste"},
+  {"tipo":"pasos","eye":"Haz esto hoy","titulo":"3 pasos para que <mark>nadie se te enfríe.</mark>","lista":["Anota cada prospecto en una sola lista","Contesta en menos de 1 hora","Segundo mensaje a las 24 h y a los 3 días"],"tip":"El seguimiento vende más que la promoción."},
+  {"tipo":"sistema","eye":"Cómo lo resolvemos","titulo":"Ningún prospecto <em>en el olvido.</em>","m":true,"texto":"Todo llega a un lugar y te avisa a quién escribir.","app":{"titulo":"Prospectos","tag":"CRM","kpi":{"l":"POR SEGUIR · HOY","v":"7"},"filas":[{"t":"Mariana R.","s":"Limpieza facial · hace 26 h","e":"ESCRIBIR","c":"r"},{"t":"Fernanda G.","s":"Paquete depilación · cotizado","e":"SEGUIMIENTO","c":"a"},{"t":"Lucía M.","s":"Valoración · sáb 11:00","e":"AGENDADA","c":"v"},{"t":"Sandra P.","s":"Nueva · Instagram","e":"NUEVA","c":"b"}],"boton":"Enviar recordatorio"},"personaje":"daniela/tablet"},
+  {"tipo":"numero","fondo":"azul","eye":"El resultado","numero":"0 <small>en visto</small>","etiqueta":"Cada persona que pregunta recibe respuesta y seguimiento, aunque tú estés en cabina.","personaje":"daniela/celebra"},
+  {"tipo":"cta","eye":"Tu turno","titulo":"¿Quieres que <em>nadie se te escape?</em>","m":true,"pregunta":"Escríbenos la palabra y te mostramos cómo se vería en tu negocio.","cta":"CLIENTE","personaje":"daniela/pulgar"}
+ ]
+}

@@ -24,3 +24,5 @@ Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
 - 2026-10-30 · carrusel · depender del dueño para todo · ferretería/panadería/refaccionaria · DUEÑO · (16:30) · 6 fotos gpt_image_2_5
 - 2026-10-31 · carrusel extra 12:00 (estilo sistema) · inventario descuadrado · bodega/ferretería · STOCK · personaje karla
 - 2026-11-01 · carrusel extra 12:00 (foto natural) · cotizaciones lentas · taller de muebles · COTIZA
+- 2026-10-31 · carrusel · prospectos sin seguimiento · clínica estética · CLIENTE · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=-2735916759734206281 · 0 créditos (estilo sistema, personaje daniela)
+- 2026-10-31 · video · robo hormiga · tienda de abarrotes · CAJA · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=-4252914051475616057 · 8 créditos (wan3_0)

@@ -26,3 +26,5 @@ Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
 - 2026-11-01 · carrusel extra 12:00 (foto natural) · cotizaciones lentas · taller de muebles · COTIZA
 - 2026-10-31 · carrusel · prospectos sin seguimiento · clínica estética · CLIENTE · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=-2735916759734206281 · 0 créditos (estilo sistema, personaje daniela)
 - 2026-10-31 · video · robo hormiga · tienda de abarrotes · CAJA · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=-4252914051475616057 · 8 créditos (wan3_0)
+- 2026-11-01 · carrusel · atención fuera de horario · e-commerce · NOCHE · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=-2949360181044491040 · 0 créditos (estilo sistema, personaje lalo; medios vía raw.githubusercontent porque github.io no responde desde la nube)
+- 2026-11-01 · video · caos de WhatsApp (pedidos) · florería · PEDIDO · https://app.metricool.com/planner/calendar?blogId=5752356&openWithPostUuid=1557890737679978332 · 8 créditos (wan3_0; revisado: sin deformidades pero casi sin movimiento, no se reintentó por presupuesto)

@@ -1,0 +1,12 @@
+{
+ "plantilla": "plantilla-sistema.html",
+ "slides": [
+  {"tipo":"gancho","eye":"Alerta","titulo":"Ya compró <mark>con otro.</mark>","texto":"Preguntó a las 11:40 pm. Le contestaste a las 9 am.","burbujas":[{"de":"Cliente · Instagram","h":"23:40","m":"¿Tienen la talla M? La quiero hoy","i":"IG"}],"personaje":"lalo/sorprendida"},
+  {"tipo":"caos","eye":"Te suena","titulo":"Tu tienda abre 24 h. <em>Tu WhatsApp no.</em>","m":true,"burbujas":[{"de":"WhatsApp","m":"¿Hacen envíos a Monterrey?","i":"WA","h":"22:15"},{"de":"Instagram","m":"¿Aceptan meses sin intereses?","c":"b","i":"IG","h":"00:03"},{"de":"Cliente","m":"Ya no, gracias. Ya lo compré.","c":"r","i":"!!","h":"08:50"}],"personaje":"lalo/preocupada"},
+  {"tipo":"numero","eye":"Lo que cuesta","numero":"3 <small>de 10</small>","vs":["PREGUNTAN DE NOCHE: 10","ESPERAN A MAÑANA: 3"],"etiqueta":"clientes siguen ahí cuando contestas al día siguiente. Los demás ya compraron.","nota":"* Ejemplo ilustrativo","personaje":"lalo/triste"},
+  {"tipo":"pasos","eye":"Haz esto hoy","titulo":"3 pasos para <mark>vender de noche.</mark>","lista":["Mensaje automático con horario y catálogo","Respuestas guardadas a las 5 dudas comunes","Link de pago directo en cada respuesta"],"tip":"El cliente de noche quiere respuesta, no perfección."},
+  {"tipo":"sistema","eye":"Cómo lo resolvemos","titulo":"Un asistente que <em>vende mientras duermes.</em>","m":true,"texto":"Contesta, revisa existencias y manda el link de pago.","app":{"titulo":"Asistente IA","tag":"24/7","kpi":{"l":"ATENDIDOS ANOCHE","v":"14"},"filas":[{"t":"Andrea L.","s":"Talla M · 23:41","e":"PAGADO","c":"v"},{"t":"Jorge P.","s":"Envío a Monterrey · 22:16","e":"LINK ENVIADO","c":"b"},{"t":"Mónica R.","s":"Meses sin intereses · 00:04","e":"SEGUIMIENTO","c":"a"},{"t":"Raúl T.","s":"Pide hablar con alguien","e":"PARA TI","c":"r"}],"boton":"Ver resumen de la noche"},"personaje":"lalo/tablet"},
+  {"tipo":"numero","fondo":"azul","eye":"El resultado","numero":"&lt;1 <small>minuto</small>","etiqueta":"en contestar a cualquier hora. Tú solo atiendes lo que de verdad te necesita.","personaje":"lalo/celebra"},
+  {"tipo":"cta","eye":"Tu turno","titulo":"¿Quieres vender <em>mientras duermes?</em>","m":true,"pregunta":"Escríbenos la palabra y te mostramos cómo se vería en tu negocio.","cta":"NOCHE","personaje":"lalo/pulgar"}
+ ]
+}

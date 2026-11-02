@@ -1,0 +1,12 @@
+{
+ "plantilla": "plantilla-sistema.html",
+ "slides": [
+  {"tipo":"gancho","eye":"Alerta","titulo":"Vendiste. <mark>¿Y el dinero?</mark>","texto":"Tu mejor mes en caja. Tu cuenta, en ceros.","burbujas":[{"de":"Banco · Aviso","h":"08:02","m":"Saldo disponible insuficiente para el pago a proveedor","i":"BX","c":"r"}],"personaje":"rosa/sorprendida"},
+  {"tipo":"caos","eye":"Te suena","titulo":"Vendes de contado. <em>Pagas sin saber cuándo.</em>","m":true,"burbujas":[{"de":"Proveedor","m":"Mañana vence la factura de medicamentos","i":"PR","h":"17:40"},{"de":"Encargado","m":"¿Pagamos la luz o esperamos?","c":"a","i":"EN","h":"18:05"},{"de":"Banco","m":"Cargo rechazado: terminal punto de venta","c":"r","i":"!!","h":"19:12"}],"personaje":"rosa/preocupada"},
+  {"tipo":"numero","eye":"Lo que cuesta","numero":"30 <small>días</small>","vs":["COBRAS: HOY","PAGAS: SIN FECHA"],"etiqueta":"puedes ir atrasado en tu dinero sin darte cuenta: vendes bien, pero el efectivo se va antes de que lo veas.","nota":"* Ejemplo ilustrativo","personaje":"rosa/triste"},
+  {"tipo":"pasos","eye":"Haz esto hoy","titulo":"3 pasos para <mark>ver tu efectivo.</mark>","lista":["Anota cada pago fijo con su fecha","Separa el dinero del negocio del tuyo","Revisa entradas y salidas cada lunes"],"tip":"Vender no es lo mismo que tener dinero."},
+  {"tipo":"sistema","eye":"Cómo lo resolvemos","titulo":"Tu flujo de efectivo <em>a 30 días, en vivo.</em>","m":true,"texto":"Ventas del día, pagos que vienen y alertas antes de que falte.","app":{"titulo":"Flujo de efectivo","tag":"EN VIVO","kpi":{"l":"DISPONIBLE ESTA SEMANA","v":"$48,300"},"filas":[{"t":"Ventas de hoy","s":"Caja + terminal · 14:20","e":"+ ENTRADA","c":"v"},{"t":"Proveedor medicamentos","s":"Vence el jueves","e":"PROGRAMADO","c":"b"},{"t":"Renta del local","s":"Vence en 6 días","e":"ALERTA","c":"a"},{"t":"Retiro personal","s":"Sobre el límite del mes","e":"REVISAR","c":"r"}],"boton":"Ver próximas 4 semanas"},"personaje":"rosa/tablet"},
+  {"tipo":"numero","fondo":"azul","eye":"El resultado","numero":"4 <small>semanas</small>","etiqueta":"de anticipación para saber si te alcanza. Decides antes de que falte, no cuando ya faltó.","personaje":"rosa/celebra"},
+  {"tipo":"cta","eye":"Tu turno","titulo":"¿Quieres ver <em>a dónde se va tu dinero?</em>","m":true,"pregunta":"Escríbenos la palabra y te mostramos cómo se vería en tu negocio.","cta":"FLUJO","personaje":"rosa/pulgar"}
+ ]
+}

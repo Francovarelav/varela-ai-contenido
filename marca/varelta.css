@@ -130,3 +130,4 @@ h2{font-size:84px;line-height:1.02}
 h1,h2{word-spacing:.09em}
 .pill,.bl .t,.fila .t,.cc .t,.app .top b,.ejemplo .t{word-spacing:.06em}
 .nota,.msg,.x,.wa,.toast{word-spacing:.03em}
+.medida,.cursor b,.eyebrow div{word-spacing:normal}

@@ -81,11 +81,11 @@ const fs = require('node:fs'), path = require('node:path'), url = require('node:
   const secs = await p.$$('section.s');
   for (let i = 0; i < secs.length; i++) await secs[i].screenshot({ path: path.join(dir, String(i + 1).padStart(2, '0') + '.png') });
 
-  // Hoja de contacto (4 columnas, 1/3 de tamaño)
+  // Hoja de contacto (4 columnas, 1/2 de tamaño)
   const imgs = secs.map((_, i) => 'data:image/png;base64,' + fs.readFileSync(path.join(dir, String(i + 1).padStart(2, '0') + '.png')).toString('base64'));
   const cols = Math.min(4, imgs.length), filas = Math.ceil(imgs.length / cols);
-  const hp = await b.newPage({ viewport: { width: cols * 360 + (cols + 1) * 10, height: filas * 450 + (filas + 1) * 10 } });
-  await hp.setContent(`<body style="margin:0;background:#222;display:grid;grid-template-columns:repeat(${cols},360px);gap:10px;padding:10px">${imgs.map(u => `<img src="${u}" style="width:360px;height:450px">`).join('')}</body>`);
+  const hp = await b.newPage({ viewport: { width: cols * 540 + (cols + 1) * 10, height: filas * 675 + (filas + 1) * 10 } });
+  await hp.setContent(`<body style="margin:0;background:#222;display:grid;grid-template-columns:repeat(${cols},540px);gap:10px;padding:10px">${imgs.map(u => `<img src="${u}" style="width:540px;height:675px">`).join('')}</body>`);
   await hp.waitForTimeout(400);
   await hp.screenshot({ path: path.join(dir, 'hoja.jpg'), type: 'jpeg', quality: 82 });
   await b.close();

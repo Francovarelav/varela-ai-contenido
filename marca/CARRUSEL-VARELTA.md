@@ -21,6 +21,7 @@ Nada que se vea hecho con IA.
    mkdir -p carruseles/<fecha>
    cp carruseles/2026-11-04-bodega/carrusel.html carruseles/<fecha>/
    ```
+   La carpeta se llama solo con la fecha (`carruseles/2026-11-05/`). El ejemplo lleva «-bodega» porque fue un carrusel extra.
 2. Edita SOLO los textos y el contenido de las piezas de `carruseles/<fecha>/carrusel.html`. Mantén:
    - las clases y la estructura;
    - el `<link>` a `../../marca/varelta.css`;
@@ -61,13 +62,14 @@ Adapta las piezas al tema:
 - **Lámina 06:** la tabla o tablero debe ser del tema (citas, cobranza, pedidos…) con chips `.ok` / `.bajo`.
 
 ## Reglas de texto
+- **Portada:** el `.sel` (cuadro de selección) va sobre 2–3 palabras («tiene 12.»), no sobre un solo número suelto. El `.cursor` se posiciona relativo a la selección: si la selección es corta o larga, ajusta su `left` inline hasta que quede debajo y a la derecha, sin salirse (el renderizador avisa si se sale).
 - **Titulares:** máximo 2 renglones. Renglón 1 en gris (`.g`) da el contexto; renglón 2 da el golpe. Máximo 6–7 palabras por renglón. Una sola palabra o frase destacada:
   - `.ce` (celeste) sobre cielo;
   - `.az` (azul) sobre papel;
   - `.sel` (cuadro de selección) solo en portada y CTA.
 - **Toda pieza flotante (tarjeta, sticker, toast) lleva su `.nota` debajo:** `<i>0N</i>` + máximo 10 palabras que explican por qué importa. Así cada cosa cuenta un pedazo de la historia.
 - Español de México con acentos correctos. Segunda persona, de dueño a dueño. Nada de relleno.
-- **Prohibido:** emojis (ni en los chats), imágenes generadas por IA, LEGO o minifiguras, glows, gradientes neón, precios.
+- **Prohibido:** emojis (ni en los chats), imágenes generadas por IA, LEGO o minifiguras, glows, gradientes neón y precios de Varelta. Las cifras de ejemplo del negocio del cliente sí van, siempre marcadas como «Ejemplo».
 - **CTA:** «Comenta PALABRA o mándanos mensaje» (PALABRA en MAYÚSCULAS, corta, que no se repita en 20 días) + varelta.com + «Guárdalo para…».
 
 ## Publicación

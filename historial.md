@@ -1,6 +1,6 @@
 # Historial de publicaciones @varela.ai
 
-Formato: `AAAA-MM-DD · tipo · tema · palabra CTA · URL de Metricool`
+Formato: `AAAA-MM-DD · tipo · tema · giro · PALABRA · URL de Metricool · créditos`
 
 ## Reels LEGO (programados a las 18:00)
 - 2026-10-30 · reel LEGO v01 · Transportistas (RUTA)

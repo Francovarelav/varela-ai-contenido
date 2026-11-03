@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#2B4FE8;--azul2:#1A37B8;--navy:#091C52;--claro:#5B87F5;--hielo:#B7CCFA;--celeste:#3FC1FF;--papel:#F5F4F0;--tinta:#0E1116;--gris:#4E5665;--rojo:#E5484D;--verde:#1FA855}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#222;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff;background:#0b1a4a}
+.s.papel{background:var(--papel);color:var(--tinta)}
+.foto{position:absolute;inset:0;background:url(cielo.jpg) 40% 55%/cover}
+.velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,28,82,.8) 0%,rgba(9,28,82,.45) 40%,rgba(9,28,82,.08) 60%,rgba(9,28,82,.15) 84%,rgba(9,28,82,.62) 100%)}
+.velo.fuerte{background:linear-gradient(180deg,rgba(9,28,82,.82) 0%,rgba(9,28,82,.55) 45%,rgba(9,28,82,.35) 75%,rgba(9,28,82,.7) 100%)}
+.grano{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.papel .grano{opacity:.05;mix-blend-mode:multiply}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}
+.eje{position:absolute;left:0;right:0;display:flex;justify-content:center}
+
+.marca{top:70px;align-items:center;gap:12px;font-weight:700;font-size:27px;letter-spacing:.03em}
+.marca img{width:46px;height:46px;filter:brightness(0) invert(1)}
+.papel .marca img{filter:none}
+.eyebrow{top:178px}
+.eyebrow div{display:flex;align-items:center;gap:14px;font-size:17px;padding:11px 22px;border:1.5px solid rgba(255,255,255,.5);border-radius:99px;background:rgba(255,255,255,.09);backdrop-filter:blur(8px)}
+.papel .eyebrow div{border-color:rgba(14,17,22,.22);background:#fff}
+.eyebrow b{width:9px;height:9px;border-radius:50%;background:var(--celeste);box-shadow:0 0 0 4px rgba(63,193,255,.25)}
+.papel .eyebrow b{background:var(--azul);box-shadow:0 0 0 4px rgba(43,79,232,.18)}
+.eyebrow em{font-style:normal;opacity:.55}
+
+h1,h2{position:absolute;left:60px;right:60px;top:258px;text-align:center;font-weight:700;letter-spacing:-.05em}
+h1{font-size:106px;line-height:1}
+h2{font-size:84px;line-height:1.02}
+.g{color:rgba(255,255,255,.6);display:block}
+.papel .g{color:#A9ADB5}
+.az{color:var(--azul)}
+.ce{color:var(--celeste)}
+
+/* selección tipo editor */
+.sel{position:relative;display:inline-block}
+.sel .caja{position:absolute;inset:8px -14px -6px -14px;border:3px solid var(--celeste);background:rgba(63,193,255,.16)}
+.sel .h{position:absolute;width:22px;height:22px;background:#fff;border:3px solid var(--celeste)}
+.h.a{left:-25px;top:-3px}.h.b{right:-25px;top:-3px}.h.c{left:-25px;bottom:-17px}.h.d{right:-25px;bottom:-17px}
+.medida{position:absolute;left:50%;transform:translateX(-50%);bottom:-70px;font-size:19px;font-weight:600;background:var(--celeste);color:var(--navy);padding:7px 14px;border-radius:8px;letter-spacing:.06em;white-space:nowrap}
+.cursor{position:absolute;display:flex;align-items:flex-start;gap:2px;text-align:left}
+.cursor svg{width:38px;height:38px}
+.cursor b{font-size:21px;font-weight:600;background:var(--azul);color:#fff;padding:8px 14px;border-radius:9px;margin-top:26px;letter-spacing:-.01em;white-space:nowrap;box-shadow:0 14px 30px -12px rgba(9,28,82,.6)}
+
+/* piezas + nota debajo */
+.pz{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.pz.c{align-items:center;text-align:center}
+.pz.d{align-items:flex-end;text-align:right}
+.card{background:#fff;color:var(--tinta);border-radius:18px;box-shadow:0 30px 60px -20px rgba(9,28,82,.6)}
+.nota{font-size:19px;line-height:1.3;font-weight:500;color:#fff;max-width:340px;background:rgba(9,28,82,.78);backdrop-filter:blur(10px);padding:12px 16px 13px;border-radius:12px;box-shadow:0 16px 34px -16px rgba(9,28,82,.7)}
+.nota i{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.1em;color:var(--celeste);display:block;margin-bottom:5px}
+.xls{padding:16px 22px 16px 16px;display:flex;align-items:center;gap:14px;font-size:22px;font-weight:500;text-align:left}
+.xls .ico{width:44px;height:44px;border-radius:9px;background:#1D6F42;color:#fff;font-weight:700;display:grid;place-items:center;font-size:22px;flex:none}
+.xls small{display:block;font-size:15px;color:#6b7280;font-family:"JetBrains Mono",monospace;margin-top:3px}
+.ref{background:#fff;border:3px solid var(--rojo);color:var(--rojo);border-radius:12px;padding:10px 18px;font-family:"JetBrains Mono",monospace;font-weight:600;font-size:32px;text-align:center;box-shadow:0 20px 44px -16px rgba(0,0,0,.45)}
+.ref small{display:block;font-size:14px;color:#9b9b9b;font-weight:500;letter-spacing:.08em}
+.wa{width:360px;padding:18px 20px 14px;font-size:22px;line-height:1.3;text-align:left}
+.wa .de{font-size:16px;font-weight:700;color:var(--verde);margin-bottom:4px}
+.hora{text-align:right;font-size:14px;color:#8a8f98;margin-top:6px}
+
+/* chat */
+.chat{position:absolute;left:150px;right:150px;display:flex;flex-direction:column;gap:22px}
+.msg{max-width:600px;padding:18px 22px 12px;border-radius:22px;font-size:25px;line-height:1.3;box-shadow:0 26px 50px -22px rgba(9,28,82,.7)}
+.msg .de{font-size:16px;font-weight:700;margin-bottom:5px}
+.msg.el{background:#fff;color:var(--tinta);align-self:flex-start;border-bottom-left-radius:6px}
+.msg.el .de{color:var(--verde)}
+.msg.yo{background:#DCF8C6;color:var(--tinta);align-self:flex-end;border-bottom-right-radius:6px}
+.msg.yo .de{color:#1D6F42}
+.msg.mal{background:#fff;color:var(--tinta);align-self:flex-start;border:3px solid var(--rojo);border-bottom-left-radius:6px}
+.msg.mal .de{color:var(--rojo)}
+
+/* bloques sólidos tipo hallazgo */
+.bloques{position:absolute;left:72px;right:72px;display:flex;flex-direction:column;gap:18px}
+.bl{border-radius:18px;padding:30px 36px 32px;position:relative;color:#fff}
+.bl .k{font-size:15px;opacity:.75}
+.bl .t{font-size:44px;font-weight:700;letter-spacing:-.035em;line-height:1.05;margin-top:12px}
+.bl .x{font-size:21px;line-height:1.35;margin-top:10px;opacity:.85;max-width:760px}
+.bl .fl{position:absolute;right:30px;top:24px;font-size:34px;opacity:.85}
+.bl.n1{background:var(--navy)}.bl.n2{background:var(--azul)}.bl.n3{background:var(--celeste);color:var(--navy)}
+
+/* costo */
+.costo{position:absolute;left:72px;right:72px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.cc{background:#fff;color:var(--tinta);border-radius:18px;padding:28px 26px 30px;box-shadow:0 30px 60px -20px rgba(9,28,82,.6)}
+.cc .num{font-size:20px;color:var(--azul);font-weight:600}
+.cc .t{font-size:31px;font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-top:18px}
+.cc .x{font-size:18px;color:var(--gris);line-height:1.35;margin-top:12px}
+.ejemplo{position:absolute;left:72px;right:72px;background:var(--navy);border:1.5px solid rgba(255,255,255,.18);border-radius:18px;padding:26px 30px;display:flex;align-items:center;gap:28px}
+.ejemplo .k{font-size:15px;color:var(--celeste);flex:none}
+.ejemplo .t{font-size:27px;line-height:1.3;font-weight:500}
+.ejemplo .t b{font-weight:700}
+
+/* índice con puntos */
+.indice{position:absolute;left:72px;right:72px;display:flex;flex-direction:column}
+.fila{display:grid;grid-template-columns:90px 1fr;gap:10px;padding:34px 0;border-top:2px dotted #C4C8D0}
+.fila:last-child{border-bottom:2px dotted #C4C8D0}
+.fila .n{font-size:22px;color:var(--azul);font-weight:600;padding-top:8px}
+.fila .t{font-size:44px;font-weight:700;letter-spacing:-.035em;line-height:1.06}
+.fila .x{font-size:22px;color:var(--gris);line-height:1.35;margin-top:10px}
+
+/* sistema */
+.app{position:absolute;left:72px;right:72px;padding:28px 30px 20px;border-radius:22px}
+.app .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.app .top b{font-size:26px;letter-spacing:-.02em}
+.vivo{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--verde);font-weight:600}
+.vivo:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--verde)}
+.tabla{width:100%;border-collapse:collapse;font-size:22px}
+.tabla th{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.1em;color:var(--gris);text-align:left;font-weight:500;padding:0 0 10px}
+.tabla td{padding:15px 0;border-top:1.5px solid #ECEEF2}
+.tabla td.r,.tabla th.r{text-align:right}
+.ok{display:inline-block;font-size:14px;font-weight:700;padding:5px 10px;border-radius:99px;background:#E3F6EA;color:#137A3B}
+.bajo{display:inline-block;font-size:14px;font-weight:700;padding:5px 10px;border-radius:99px;background:#FDECEC;color:#C4282D}
+.toast{padding:18px 22px;display:flex;gap:16px;align-items:center;font-size:21px;line-height:1.3;text-align:left;width:420px}
+.toast .ic{width:46px;height:46px;border-radius:12px;background:var(--azul);color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;flex:none}
+.toast small{display:block;color:var(--gris);font-size:16px}
+
+/* CTA */
+.cta{bottom:72px;flex-direction:column;align-items:center;gap:18px}
+.pill{display:flex;align-items:center;gap:16px;background:#fff;color:var(--tinta);font-weight:700;font-size:26px;padding:16px 18px 16px 32px;border-radius:99px;letter-spacing:-.015em;box-shadow:0 24px 50px -18px rgba(9,28,82,.7)}
+.pill span{width:48px;height:48px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-size:26px}
+.papel .pill{background:var(--tinta);color:#fff}
+.sigue{bottom:72px}
+.sigue div{font-size:17px;padding:12px 22px;border-radius:99px;border:1.5px solid rgba(255,255,255,.5);display:flex;gap:12px;align-items:center}
+.papel .sigue div{border-color:rgba(14,17,22,.25)}
+</style></head><body>
+
+<!-- 01 PORTADA -->
+<section class="s" id="s1">
+<div class="foto"></div><div class="velo"></div><div class="grano"></div>
+<div class="eje marca"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Inventarios <em>·</em> 01 / 07</div></div>
+<h1><span class="g">Tu Excel dice 40.</span>Tu bodega
+<span class="sel"><span class="caja"></span><span class="h a"></span><span class="h b"></span><span class="h c"></span><span class="h d"></span>tiene 12.<span class="medida mono">−28 piezas</span><span class="cursor" style="left:38%;bottom:-170px"><svg viewBox="0 0 24 24"><path d="M3 2l18 8-8 2.5L10 21z" fill="#2B4FE8" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>¿Dónde están?</b></span></span></h1>
+
+<div class="pz" style="left:72px;width:330px;top:850px"><div class="card xls" style="transform:rotate(-4deg);font-size:18px;padding:14px 16px 14px 14px"><div class="ico" style="width:38px;height:38px;font-size:19px">X</div><div>Inventario_FINAL_v3 (2).xlsx<small style="font-size:13px">editado por 4 personas</small></div></div>
+<div class="nota" style="width:300px"><i>01</i>Cuatro copias del mismo archivo. Ninguna cuadra.</div></div>
+
+<div class="pz c" style="left:418px;width:244px;top:790px"><div class="ref" style="transform:rotate(-3deg)">#¡REF!<small>CELDA D14</small></div>
+<div class="nota" style="width:244px"><i>02</i>Una fórmula rota y todo el reporte miente.</div></div>
+
+<div class="pz d" style="right:72px;width:330px;top:850px"><div class="card wa" style="transform:rotate(4deg);width:330px;font-size:20px"><div class="de">Bodega · Luis</div>¿Quién movió las cajas del pedido de ayer? Aquí no salen.<div class="hora">9:42 p. m. ✓✓</div></div>
+<div class="nota" style="width:300px;text-align:left"><i>03</i>Lo que no se anota en el momento, se pierde.</div></div>
+
+<div class="eje cta"><div class="pill">Desliza y te decimos dónde se van<span>→</span></div></div>
+</section>
+
+<!-- 02 LA ESCENA -->
+<section class="s" id="s2">
+<div class="foto" style="background-position:75% 30%"></div><div class="velo fuerte"></div><div class="grano"></div>
+<div class="eje marca"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>La escena <em>·</em> 02 / 07</div></div>
+<h2><span class="g">Lunes, 8:00 a. m.</span>El cliente pide 30 cajas.</h2>
+<div class="chat" style="top:520px">
+  <div class="msg el"><div class="de">Ferretería Ruiz</div>¿Me surtes 30 cajas de tornillo de 1/4 hoy?<div class="hora">8:02 a. m.</div></div>
+  <div class="msg yo"><div class="de">Tú</div>Claro, en el Excel hay 40. Te las mando al mediodía.<div class="hora">8:05 a. m. ✓✓</div></div>
+  <div class="msg mal"><div class="de">Bodega · Luis</div>Jefe, aquí solo hay 12. Las demás no aparecen.<div class="hora">8:31 a. m.</div></div>
+</div>
+<div class="eje" style="top:1090px"><div class="nota" style="max-width:700px;text-align:center;font-size:24px;padding:16px 24px">Y ahora te toca llamarle al cliente para decirle que no.</div></div>
+<div class="eje sigue"><div class="mono">¿Por qué pasa? <span>→</span></div></div>
+</section>
+
+<!-- 03 POR QUÉ PASA -->
+<section class="s papel" id="s3">
+<div class="grano"></div>
+<div class="eje marca" style="color:var(--tinta)"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Por qué pasa <em>·</em> 03 / 07</div></div>
+<h2><span class="g">No se descuadra solo.</span>Se va por <span class="az">tres fugas.</span></h2>
+<div class="bloques" style="top:530px">
+  <div class="bl n1"><div class="k mono">Fuga 01</div><div class="fl">↗</div><div class="t">Salidas que nadie captura.</div><div class="x">«Me llevo dos cajas rápido, al rato lo anoto.» Y el rato nunca llega.</div></div>
+  <div class="bl n2"><div class="k mono">Fuga 02</div><div class="fl">↗</div><div class="t">Cuatro versiones del archivo.</div><div class="x">Cada quien edita su copia en su compu. Nadie sabe cuál es la buena.</div></div>
+  <div class="bl n3"><div class="k mono">Fuga 03</div><div class="fl">↗</div><div class="t">Mermas y devoluciones al aire.</div><div class="x">Lo que se rompe o regresa el cliente vuelve al anaquel, pero no al Excel.</div></div>
+</div>
+<div class="eje sigue"><div class="mono">Lo que te cuesta <span>→</span></div></div>
+</section>
+
+<!-- 04 LO QUE CUESTA -->
+<section class="s" id="s4">
+<div class="foto" style="background-position:20% 70%"></div><div class="velo fuerte"></div><div class="grano"></div>
+<div class="eje marca"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Lo que cuesta <em>·</em> 04 / 07</div></div>
+<h2><span class="g">Una pieza que no está</span>la pagas <span class="ce">tres veces.</span></h2>
+<div class="costo" style="top:540px">
+  <div class="cc"><div class="num mono">01</div><div class="t">La venta que se fue con otro.</div><div class="x">El cliente no espera. Le compra a quien sí tiene.</div></div>
+  <div class="cc"><div class="num mono">02</div><div class="t">La compra urgente, más cara.</div><div class="x">Pides de emergencia, sin negociar y con flete extra.</div></div>
+  <div class="cc"><div class="num mono">03</div><div class="t">Las horas buscando.</div><div class="x">Tu equipo deja de vender para contar cajas.</div></div>
+</div>
+<div class="ejemplo" style="top:930px"><div class="k mono">Ejemplo</div><div class="t">28 piezas de $150 son <b>$4,200</b> que no sabes dónde quedaron. Multiplícalo por cada producto.</div></div>
+<div class="eje sigue"><div class="mono">Qué hacer hoy <span>→</span></div></div>
+</section>
+
+<!-- 05 HAZLO HOY -->
+<section class="s papel" id="s5">
+<div class="grano"></div>
+<div class="eje marca" style="color:var(--tinta)"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Hazlo hoy <em>·</em> 05 / 07</div></div>
+<h2><span class="g">Aunque no nos contrates,</span>haz esto <span class="az">el lunes.</span></h2>
+<div class="indice" style="top:530px">
+  <div class="fila"><div class="n mono">01</div><div><div class="t">Un solo archivo, un solo dueño.</div><div class="x">Una persona lo edita. Los demás solo lo consultan.</div></div></div>
+  <div class="fila"><div class="n mono">02</div><div><div class="t">Ninguna salida sin vale.</div><div class="x">Aunque sea en papel. Si no hay vale, no sale de bodega.</div></div></div>
+  <div class="fila"><div class="n mono">03</div><div><div class="t">Cuenta 10 productos al día.</div><div class="x">No todo una vez al año. En un mes ya sabes dónde está la fuga.</div></div></div>
+</div>
+<div class="eje sigue"><div class="mono">Y si quieres que cuadre solo <span>→</span></div></div>
+</section>
+
+<!-- 06 CON UN SISTEMA -->
+<section class="s" id="s6">
+<div class="foto" style="background-position:60% 40%"></div><div class="velo"></div><div class="grano"></div>
+<div class="eje marca"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Con un sistema <em>·</em> 06 / 07</div></div>
+<h2><span class="g">Así se ve</span>cuando <span class="ce">cuadra solo.</span></h2>
+<div class="card app" style="top:510px">
+  <div class="top"><b>Inventario</b><span class="vivo mono">En vivo</span></div>
+  <table class="tabla">
+    <tr><th>PRODUCTO</th><th class="r">SISTEMA</th><th class="r">BODEGA</th><th class="r">ESTADO</th></tr>
+    <tr><td>Tornillo 1/4 · caja</td><td class="r">12</td><td class="r">12</td><td class="r"><span class="ok">Cuadra</span></td></tr>
+    <tr><td>Taquete 5/16 · caja</td><td class="r">64</td><td class="r">64</td><td class="r"><span class="ok">Cuadra</span></td></tr>
+    <tr><td>Silicón transparente</td><td class="r">5</td><td class="r">5</td><td class="r"><span class="bajo">Pedir ya</span></td></tr>
+  </table>
+</div>
+<div class="nota" style="position:absolute;left:72px;top:880px;max-width:420px"><i>01</i>Una sola versión, en vivo. Lo que ves es lo que hay en bodega.</div>
+<div class="pz d" style="right:72px;top:900px"><div class="card toast" style="transform:rotate(2deg)"><div class="ic">↓</div><div>Salida registrada · 18 cajas<small>Luis, desde su celular · 8:31 a. m.</small></div></div>
+<div class="nota" style="text-align:left;width:360px"><i>02</i>Cada salida se anota en el momento, con nombre y hora.</div></div>
+<div class="pz" style="left:72px;top:1010px"><div class="card toast" style="transform:rotate(-2deg);width:400px"><div class="ic" style="background:var(--rojo)">!</div><div>Quedan 5 de silicón<small>Pedido sugerido al proveedor</small></div></div><div class="nota" style="width:360px"><i>03</i>Te avisa antes de que se acabe, no después.</div></div>
+<div class="eje sigue"><div class="mono">¿Lo quieres en tu negocio? <span>→</span></div></div>
+</section>
+
+<!-- 07 CTA -->
+<section class="s" id="s7">
+<div class="foto" style="background-position:40% 60%"></div><div class="velo fuerte"></div><div class="grano"></div>
+<div class="eje marca"><img src="vareltatrans.png" alt="">VARELTA</div>
+<div class="eje eyebrow"><div class="mono"><b></b>Tu turno <em>·</em> 07 / 07</div></div>
+<h1 style="font-size:96px"><span class="g">¿Tu inventario</span>tampoco
+<span class="sel"><span class="caja"></span><span class="h a"></span><span class="h b"></span><span class="h c"></span><span class="h d"></span>cuadra?</span></h1>
+<div class="eje" style="top:600px"><div class="nota" style="max-width:760px;text-align:center;font-size:28px;line-height:1.35;padding:20px 30px">Comenta <b>BODEGA</b> o mándanos mensaje.<br>Te escribimos y te mostramos cómo se vería en tu negocio.</div></div>
+<div class="eje" style="top:790px"><div class="pill" style="font-size:34px;padding:22px 22px 22px 40px">Comenta BODEGA<span style="width:58px;height:58px">↗</span></div></div>
+<div class="eje" style="top:1150px"><div class="mono" style="font-size:18px;opacity:.9">varelta.com <span style="opacity:.5">·</span> Guárdalo para tu próximo conteo</div></div>
+</section>
+
+</body></html>

@@ -65,6 +65,6 @@ El gancho de la portada debe ser:
 Si al correr ya pasaron las 10:00 de hoy, programa para la siguiente hora en punto que esté al menos 30 min en el futuro. Evita las 18:00, que es del reel LEGO.
 
 ## 5. Cierre
-1. Agrega a `historial.md`, en la sección «Carruseles (10:00) y videos nuevos (15:00)», un renglón: `<fecha> · carrusel · <tema> · <giro> · <PALABRA> · <plannerUrl> · 0 créditos (estilo Varelta)`.
+1. Agrega a `historial.md`, en la sección «Carruseles (10:00) y videos nuevos (15:00)», un renglón: `<fecha> · carrusel · <tema> · <giro> · <PALABRA> · <plannerUrl> · 0 créditos (estilo Varelta) · portada: <foto>`.
 2. Haz commit y push. Si el push falla, no reintentes más de una vez y deja el historial en el resumen final.
 3. Termina con un resumen corto de lo programado, o con el error exacto si algo falló.

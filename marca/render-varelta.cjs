@@ -75,7 +75,13 @@ const fs = require('node:fs'), path = require('node:path'), url = require('node:
       });
       if ((s.innerText || '').includes('�')) E.push(`${n}: hay caracteres rotos (�).`);
     });
-    return { E, W, n: secs.length };
+    // Fotos de fondo por lámina (variedad obligatoria)
+    const fotos = secs.map(s => { const f = s.querySelector('.foto'); if (!f) return null; const m = getComputedStyle(f).backgroundImage.match(/fotos\/([^/")]+)\.(jpe?g|png|webp)/); return m ? m[1] : '?'; });
+    const conFoto = fotos.filter(Boolean);
+    const distintas = new Set(conFoto).size;
+    if (conFoto.length >= 3 && distintas < 3) E.push(`Usas ${distintas} foto(s) de fondo distinta(s) en ${conFoto.length} láminas: usa al menos 3 fotos distintas de marca/fotos/ (ver CARRUSEL-VARELTA.md).`);
+    for (let i = 1; i < fotos.length; i++) if (fotos[i] && fotos[i] === fotos[i - 1]) W.push(`Láminas ${String(i).padStart(2,'0')} y ${String(i+1).padStart(2,'0')} usan la misma foto seguida (${fotos[i]}).`);
+    return { E, W, n: secs.length, fotos };
   });
 
   const secs = await p.$$('section.s');
@@ -91,6 +97,7 @@ const fs = require('node:fs'), path = require('node:path'), url = require('node:
   await b.close();
 
   console.log(`${rep.n} láminas → ${dir}`);
+  console.log('Fotos: ' + rep.fotos.map((f, i) => String(i + 1).padStart(2, '0') + ' ' + (f || 'papel')).join(' · ') + `  (portada: ${rep.fotos[0] || 'papel'})`);
   rep.W.forEach(w => console.log('AVISO  ' + w));
   rep.E.forEach(e => console.log('ERROR  ' + e));
   console.log(rep.E.length ? `\n${rep.E.length} errores: corrígelos y vuelve a renderizar.` : '\nRevisión automática: sin errores. Ahora mira hoja.jpg.');

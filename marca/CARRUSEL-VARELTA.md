@@ -42,6 +42,29 @@ Nada que se vea hecho con IA.
 
    Si algo se ve mal, corrígelo (máximo 2 vueltas).
 
+## Fotos de fondo: SIEMPRE variadas
+Banco en `marca/fotos/`. Son fotos reales, CC0 o dominio público (ver `LICENCIAS.md`), nada de IA:
+- `cielo` (la de varelta.com)
+- `nubes-cumulo`
+- `mar-horizonte`
+- `ventana-avion`
+- `cerro-de-la-silla` (Monterrey)
+- `cirros-azul`
+- `cirros-plumas`
+- `nube-pluma`
+- `altocumulos`
+
+Cada lámina con cielo elige su foto en el `.foto`:
+```html
+<div class="foto" style="background-image:url(../../marca/fotos/cerro-de-la-silla.jpg);background-position:50% 60%"></div>
+```
+
+Reglas:
+- **En cada carrusel**, usa al menos 3 fotos distintas y no repitas la misma en dos láminas seguidas. El renderizador marca ERROR si hay menos de 3.
+- **Portada:** no uses la misma foto de portada de los últimos 5 carruseles. El renderizador imprime `portada: <foto>`; anótala en el historial.
+- Ajusta `background-position` para que las nubes o el horizonte queden detrás de las piezas y el titular se lea. `cerro-de-la-silla`, `mar-horizonte` y `ventana-avion` lucen mejor en la portada o el CTA.
+- Si agregas fotos nuevas: tienen que ser reales, sin gente ni marcas, con licencia libre anotada en `LICENCIAS.md`, y de dominante azul.
+
 ## La historia: 7 láminas, siempre en este orden
 Cada lámina responde la pregunta que dejó abierta la anterior: es un open loop. El texto pequeño de abajo (`.sigue`) es el puente a la siguiente.
 

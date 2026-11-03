@@ -1,0 +1,12 @@
+{
+ "plantilla": "plantilla-sistema.html",
+ "slides": [
+  {"tipo":"gancho","eye":"Alerta","titulo":"Tu silla vacía <mark>también cobra.</mark>","texto":"Te apartaron las 5:00. Nunca llegó.","burbujas":[{"de":"Cliente · WhatsApp","h":"16:58","m":"Uy, ya no llego hoy, ¿lo movemos?","i":"CL","c":"r"}],"personaje":"valeria/sorprendida"},
+  {"tipo":"caos","eye":"Te suena","titulo":"Agenda en libreta. <em>Citas por WhatsApp.</em>","m":true,"burbujas":[{"de":"Cliente nuevo","m":"¿Tienes espacio a las 6? Llego en 10","i":"CN","h":"17:40"},{"de":"Estilista 2","m":"Tenía dos citas a la misma hora","c":"a","i":"E2","h":"18:05"},{"de":"Cliente","m":"Perdón, se me olvidó por completo","c":"r","i":"!!","h":"19:12"}],"personaje":"valeria/preocupada"},
+  {"tipo":"numero","eye":"Lo que cuesta","numero":"3 <small>faltas</small>","vs":["A LA SEMANA","SIN AVISO"],"etiqueta":"son horas de silla vacía y estilista esperando. Ejemplo: 3 cortes de $200 = $600 por semana que no regresan.","nota":"* Ejemplo ilustrativo","personaje":"valeria/triste"},
+  {"tipo":"pasos","eye":"Haz esto hoy","titulo":"3 pasos para <mark>que sí lleguen.</mark>","lista":["Confirma cada cita un día antes","Pide anticipo en horarios pico","Ten lista de espera para huecos"],"tip":"Una cita sin confirmar es solo una idea."},
+  {"tipo":"sistema","eye":"Cómo lo resolvemos","titulo":"Tu agenda <em>se confirma sola.</em>","m":true,"texto":"Reserva en línea y recordatorio automático.","app":{"titulo":"Agenda de hoy","tag":"EN VIVO","kpi":{"l":"CITAS CONFIRMADAS HOY","v":"14 de 15"},"filas":[{"t":"Corte + peinado · 4:00","s":"Confirmó por WhatsApp","e":"CONFIRMADA","c":"v"},{"t":"Tinte · 5:00","s":"Anticipo pagado","e":"PAGADA","c":"b"},{"t":"Corte · 6:00","s":"Sin respuesta al recordatorio","e":"PENDIENTE","c":"a"},{"t":"Hueco 7:00","s":"Ofrecido a lista de espera","e":"LLENANDO","c":"r"}],"boton":"Ver semana completa"},"personaje":"valeria/tablet"},
+  {"tipo":"numero","fondo":"azul","eye":"El resultado","numero":"24 <small>horas</small>","etiqueta":"antes sabes quién viene y quién no. Si alguien cancela, otro cliente toma su lugar.","personaje":"valeria/celebra"},
+  {"tipo":"cta","eye":"Tu turno","titulo":"¿Quieres tu agenda <em>sin sillas vacías?</em>","m":true,"pregunta":"Escríbenos la palabra y te mostramos cómo se vería en tu negocio.","cta":"AGENDA","personaje":"valeria/pulgar"}
+ ]
+}

@@ -15,7 +15,7 @@ Trabajas solo, sin preguntar nada: termina todo.
 ## Contexto fijo
 - **Repo clonado:** varela-ai-contenido. Lee PRIMERO:
   - `marca/CARRUSEL-VARELTA.md`: el estilo aprobado, la historia de 7 láminas y el flujo. Manda sobre `GUIA.md` y `CARRUSEL.md`, que son de estilos viejos.
-  - `historial.md`: lo ya publicado. Usa SOLO la sección «Carruseles (10:00) y videos nuevos (15:00)» y solo fechas de hoy hacia atrás. Los reels LEGO de las 18:00 no cuentan. En los últimos 20 días, NO repitas el dolor principal (aunque cambie el giro), el giro ni la palabra CTA. Dos temas son distintos si el dolor principal es distinto; por ejemplo, «anuncios que no convierten» y «prospectos sin seguimiento» se parecen demasiado y no deben ir en la misma semana.
+  - `historial.md`: lo ya publicado. Usa SOLO la sección «Carruseles (10:00) y videos nuevos (15:00)» con las fechas de los últimos 20 días Y las ya programadas a futuro (los carruseles extra de las 12:00 también cuentan). Los reels LEGO de las 18:00 no cuentan. En los últimos 20 días, NO repitas el dolor principal (aunque cambie el giro), el giro ni la palabra CTA. Dos temas son distintos si el dolor principal es distinto; por ejemplo, «anuncios que no convierten» y «prospectos sin seguimiento» se parecen demasiado y no deben ir en la misma semana.
 - **Metricool:** blogId `5752356` (marca varela.ai), zona `America/Monterrey`. Publica en Instagram y Facebook, con autoPublish true y draft false.
 - **Reels LEGO:** ya hay reels LEGO programados a las 18:00 (ver historial). No los toques.
 - **Fecha de hoy:** `TZ=America/Monterrey date +%F`.

@@ -42,28 +42,25 @@ Nada que se vea hecho con IA.
 
    Si algo se ve mal, corrígelo (máximo 2 vueltas).
 
-## Fotos de fondo: SIEMPRE variadas
-Banco en `marca/fotos/`. Son fotos reales, CC0 o dominio público (ver `LICENCIAS.md`), nada de IA:
-- `cielo` (la de varelta.com)
-- `nubes-cumulo`
-- `mar-horizonte`
-- `ventana-avion`
-- `cerro-de-la-silla` (Monterrey)
-- `cirros-azul`
-- `cirros-plumas`
-- `nube-pluma`
-- `altocumulos`
+## Fotos de fondo: del giro del día, cielos solo de relleno
+Banco en `marca/fotos/`. Son fotos reales, CC0 o dominio público (ver `LICENCIAS.md`), nada de IA.
 
-Cada lámina con cielo elige su foto en el `.foto`:
+**Fotos de giro** (`marca/fotos/giros/<giro>/<giro>-1.jpg` y `-2.jpg`): taller-mecanico, bodega-inventario, restaurante-cocina, tienda-mostrador, oficina-despacho, clinica-consultorio, obra-construccion, fabrica-produccion, escuela-salon, gimnasio, ferreteria, farmacia, flotilla-camiones, e-commerce-paquetes, inmobiliaria. Si el giro del día no tiene carpeta, usa el más parecido (p. ej. veterinaria → clinica-consultorio, refaccionaria → ferreteria, abarrotes → tienda-mostrador).
+
+**Cielos** (relleno): `cielo`, `nubes-cumulo`, `mar-horizonte`, `ventana-avion`, `cerro-de-la-silla`, `cirros-azul`, `cirros-plumas`, `nube-pluma`, `altocumulos`.
+
+Cada lámina con foto elige la suya en el `.foto`:
 ```html
-<div class="foto" style="background-image:url(../../marca/fotos/cerro-de-la-silla.jpg);background-position:50% 60%"></div>
+<div class="foto" style="background-image:url(../../marca/fotos/giros/taller-mecanico/taller-mecanico-1.jpg);background-position:50% 50%"></div>
 ```
 
 Reglas:
-- **En cada carrusel**, usa al menos 3 fotos distintas y no repitas la misma en dos láminas seguidas. El renderizador marca ERROR si hay menos de 3.
-- **Portada:** no uses la misma foto de portada de los últimos 5 carruseles. El renderizador imprime `portada: <foto>`; anótala en el historial.
-- Ajusta `background-position` para que las nubes o el horizonte queden detrás de las piezas y el titular se lea. `cerro-de-la-silla`, `mar-horizonte` y `ventana-avion` lucen mejor en la portada o el CTA.
-- Si agregas fotos nuevas: tienen que ser reales, sin gente ni marcas, con licencia libre anotada en `LICENCIAS.md`, y de dominante azul.
+- **La portada y al menos 2 láminas más usan fotos del giro del día** (`giros/<giro>/`; con 2 fotos por giro, alterna `-1` y `-2` y ajusta `background-position`). Los cielos son solo relleno: **máximo 2 láminas**. Las láminas de papel claro no cuentan.
+- No repitas la misma foto en dos láminas seguidas.
+- **Portada:** no repitas la foto de portada de los últimos 10 carruseles. El renderizador imprime `portada: <foto>`; anótala en el historial (`portada: giros/<giro>/<archivo>`) y revísalo antes de elegir.
+- El renderizador avisa (AVISO) si la portada no es de giro, si hay menos de 3 láminas con foto de giro o si hay más de 2 con cielo; corrígelo antes de publicar. Sigue marcando ERROR si hay menos de 3 fotos distintas.
+- La foto de giro ya viene con el velo azul del CSS; si el titular no se lee, usa `velo fuerte`.
+- Si agregas fotos nuevas: tienen que ser reales, sin caras reconocibles ni logos, con licencia libre anotada en `LICENCIAS.md`, 1600 px de lado largo, jpg q82.
 
 ## La historia: 7 láminas, siempre en este orden
 Cada lámina responde la pregunta que dejó abierta la anterior: es un open loop. El texto pequeño de abajo (`.sigue`) es el puente a la siguiente.

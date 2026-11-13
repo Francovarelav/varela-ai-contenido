@@ -76,11 +76,19 @@ const fs = require('node:fs'), path = require('node:path'), url = require('node:
       if ((s.innerText || '').includes('�')) E.push(`${n}: hay caracteres rotos (�).`);
     });
     // Fotos de fondo por lámina (variedad obligatoria)
-    const fotos = secs.map(s => { const f = s.querySelector('.foto'); if (!f) return null; const m = getComputedStyle(f).backgroundImage.match(/fotos\/([^/")]+)\.(jpe?g|png|webp)/); return m ? m[1] : '?'; });
+    const fotos = secs.map(s => { const f = s.querySelector('.foto'); if (!f) return null; const m = getComputedStyle(f).backgroundImage.match(/fotos\/((?:giros\/[^/]+\/)?[^/")]+)\.(jpe?g|png|webp)/); return m ? m[1] : '?'; });
     const conFoto = fotos.filter(Boolean);
     const distintas = new Set(conFoto).size;
     if (conFoto.length >= 3 && distintas < 3) E.push(`Usas ${distintas} foto(s) de fondo distinta(s) en ${conFoto.length} láminas: usa al menos 3 fotos distintas de marca/fotos/ (ver CARRUSEL-VARELTA.md).`);
     for (let i = 1; i < fotos.length; i++) if (fotos[i] && fotos[i] === fotos[i - 1]) W.push(`Láminas ${String(i).padStart(2,'0')} y ${String(i+1).padStart(2,'0')} usan la misma foto seguida (${fotos[i]}).`);
+    // Fotos del giro del día: portada + al menos 2 láminas más; cielos máx. 2
+    const esGiro = f => f && f.startsWith('giros/');
+    const nGiro = conFoto.filter(esGiro).length, nCielo = conFoto.length - nGiro;
+    if (conFoto.length >= 3) {
+      if (!esGiro(fotos[0])) W.push('La portada debe usar una foto del giro del día (marca/fotos/giros/<giro>/), no un cielo.');
+      if (nGiro < 3) W.push(`Solo ${nGiro} lámina(s) con foto del giro; usa portada + al menos 2 más de marca/fotos/giros/<giro>/.`);
+      if (nCielo > 2) W.push(`${nCielo} láminas con cielo; los cielos son relleno (máx. 2).`);
+    }
     return { E, W, n: secs.length, fotos };
   });
 

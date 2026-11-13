@@ -46,6 +46,7 @@ El gancho de la portada debe ser:
 1. Sigue `marca/CARRUSEL-VARELTA.md` al pie de la letra:
    - copia `carruseles/2026-11-04-bodega/carrusel.html` a `carruseles/<fecha>/`;
    - cambia los textos y las piezas al tema del día;
+   - **fotos de fondo:** la portada y al menos 2 láminas más usan fotos del giro del día (`marca/fotos/giros/<giro>/`, 2 por giro; si el giro no tiene carpeta, usa el más parecido). Los cielos (`marca/fotos/*.jpg`) son solo relleno, máx. 2 láminas. No repitas la foto de portada de los últimos 10 carruseles (míralas en `historial.md`, campo `portada:`). El renderizador da AVISO si no se cumple;
    - renderiza con `node marca/render-varelta.cjs carruseles/<fecha>` y corrige hasta que diga «sin errores»;
    - mira `hoja.jpg`.
 2. Haz commit de `carruseles/<fecha>/` (`carrusel.html`, `01.png … 07.png`, `hoja.jpg`) y push a `main`.
@@ -90,7 +91,7 @@ Si al correr ya pasaron las 10:00 de hoy (carrusel) o las 15:00 (video), program
 
 ## 6. Cierre
 1. Agrega a `historial.md`, en la sección «Carruseles (10:00) y videos nuevos (15:00)»:
-   - Carrusel: `<fecha> · carrusel · <tema> · <giro> · <PALABRA> · <plannerUrl> · 0 créditos (estilo Varelta) · portada: <foto>`.
+   - Carrusel: `<fecha> · carrusel · <tema> · <giro> · <PALABRA> · <plannerUrl> · 0 créditos (estilo Varelta) · portada: <foto, p. ej. giros/taller-mecanico/taller-mecanico-1>`.
    - Video: `<fecha> · video · <tema> · <giro> · <PALABRA> · <plannerUrl> · créditos ElevenLabs · motion-creativo`.
 2. Haz commit y push. Si el push falla, no reintentes más de una vez y deja el historial en el resumen final.
 3. Termina con un resumen corto de lo programado, o con el error exacto si algo falló.
